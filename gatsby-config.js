@@ -6,6 +6,8 @@ module.exports = {
     title: siteConfig.name,
     author: siteConfig.author,
     description: siteConfig.description,
+    theme: siteConfig.theme,
+    speakersList: siteConfig.speakersList,
     siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
     social: {
       twitter: siteConfig.twitter,

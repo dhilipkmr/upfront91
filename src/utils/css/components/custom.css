@@ -1,0 +1,68 @@
+.theme {
+  background: #404040;
+  padding: 7%;
+  border-radius: 30px;
+  text-align: center;
+  margin: 10px;
+  font-size: 20px;
+  line-height: 2em;
+}
+.speaker {
+  width: 100%;
+  background: #19191c;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  max-height: 250px;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  transform: scale(1);
+}
+.contentSpeaker:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.04);
+}
+.speakerHeading {
+  font-size: 50px;
+  text-align: center;
+  line-height: 3em;
+  font-weight: bold;
+  letter-spacing: 0.4em;
+}
+.posRel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.speakerImg {
+  border-radius: 10px 0px 0px 10px;
+}
+.topic {
+  font-size: 50px;
+}
+.avatarWrap {
+  width: 40%;
+  display: inline-block;
+}
+.contentSpeaker {
+  width: 60%;
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+}
+
+.margin10 {
+  margin: 10px;
+}
+
+.lightGrey {
+  color: #989898;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
+.speakerWrap {
+  max-width: 1000px;
+  margin: 0px auto;
+}

@@ -9,7 +9,12 @@ import PostCard from "../components/postCard"
 // import "../utils/global.scss"
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
+import "../utils/css/components/custom.css"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
+
+import Speakers from '../components/Speakers';
+import ContactUs from '../components/ContactUs';
+
 const BlogIndex = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
@@ -29,19 +34,9 @@ const BlogIndex = ({ data }, location) => {
           </h2>
         </header>
       )}
-      <div className="post-feed">
-        {posts.map(({ node }) => {
-          postCounter++
-          return (
-            <PostCard
-              key={node.fields.slug}
-              count={postCounter}
-              node={node}
-              postClass={`post`}
-            />
-          )
-        })}
-      </div>
+      <div class="theme">{`"${data.site.siteMetadata.theme}"`}</div>
+      <Speakers list={data.site.siteMetadata.speakersList}/>
+      <ContactUs/>
     </Layout>
   )
 }
@@ -52,6 +47,12 @@ const indexQuery = graphql`
       siteMetadata {
         title
         description
+        theme
+        speakersList {
+          name
+          topic
+          role
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
