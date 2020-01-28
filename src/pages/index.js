@@ -1,16 +1,12 @@
-import React from "react"
+import React, {useRef} from "react"
 import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import Bio from "../components/bio"
 import PostCard from "../components/postCard"
-
-// import "../utils/global.scss"
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
 import "../utils/css/components/custom.css"
-//TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 
 import Speakers from '../components/Speakers';
 import ContactUs from '../components/ContactUs';
@@ -18,15 +14,29 @@ import ContactUs from '../components/ContactUs';
 const BlogIndex = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  let postCounter = 0
+  let postCounter = 0;
+  const $themeSection = useRef(null);
+  const $speakerRef = React.createRef();
+  const $contactUsSection = useRef(null);
+
+  const registerUser = () => {
+    window.open('/', "_blank");
+  };
+
+  const scrollToLocation = (anchor) => {
+    if (anchor === 'theme') {
+      window.scrollTo(0, $themeSection.current.getBoundingClientRect().y - 20);
+    } else if (anchor === 'speakers') {
+      window.scrollTo(0,  $speakerRef.current.getBoundingClientRect().y - 20);
+    } else if (anchor === 'contactus') {
+      window.scrollTo(0, $contactUsSection.current.getBoundingClientRect().y - 20);
+    }
+  };
 
   return (
-    <Layout title={siteTitle}>
-      <SEO
-        title="Posts"
-        keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]}
-      />
-      {/* <Bio /> */}
+    <Layout title={siteTitle} scrollToLocation={scrollToLocation}>
+      <SEO title="Posts" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]}/>
+      <div class="register" onClick={registerUser}>Register</div>
       {data.site.siteMetadata.description && (
         <header className="page-head">
           <h2 className="page-head-title">
@@ -34,9 +44,9 @@ const BlogIndex = ({ data }, location) => {
           </h2>
         </header>
       )}
-      <div class="theme">{`"${data.site.siteMetadata.theme}"`}</div>
-      <Speakers list={data.site.siteMetadata.speakersList}/>
-      <ContactUs/>
+      <div ref={$themeSection} class="theme">{`"${data.site.siteMetadata.theme}"`}</div>
+      <Speakers list={data.site.siteMetadata.speakersList} ref={$speakerRef}/>
+      <ContactUs ref={$contactUsSection}/>
     </Layout>
   )
 }

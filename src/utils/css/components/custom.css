@@ -9,8 +9,8 @@
 }
 .speaker {
   width: 100%;
-  background: #19191c;
-  margin-bottom: 15px;
+  background: #2d2d31;
+  margin-bottom: 40px;
   border-radius: 10px;
   max-height: 250px;
   overflow: hidden;
@@ -28,8 +28,9 @@
   font-weight: bold;
   letter-spacing: 0.4em;
 }
-.posRel {
-  position: relative;
+.flex {
+  display: flex;
+  flex-flow: row wrap;
 }
 .abs {
   position: absolute;
@@ -38,14 +39,15 @@
   border-radius: 10px 0px 0px 10px;
 }
 .topic {
-  font-size: 50px;
+  font-size: 40px;
+  line-height: 1.2em;
 }
 .avatarWrap {
-  width: 40%;
+  width: 30%;
   display: inline-block;
 }
 .contentSpeaker {
-  width: 60%;
+  width: 70%;
   display: inline-block;
   text-align: center;
   padding: 20px;
@@ -64,5 +66,61 @@
 }
 .speakerWrap {
   max-width: 1000px;
-  margin: 0px auto;
+  margin: 50px auto;
+}
+.speakerBg {
+  background: #2d2d31;
+}
+
+.site-head li.nav-item  {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 12px;
+  color: #f5f5f7;
+  font-weight: 600;
+  opacity: 0.4;
+}
+
+@media (max-width: 600px) {
+  .width100-tab {
+    width: 100%;
+  }
+}
+
+.register {
+  position: sticky;
+  float: right;
+  background: white;
+  border-radius: 14px;
+  color: black;
+  padding: 6px 29px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.register:hover {
+  cursor: pointer;
+}
+.icons {
+  font-size: 40px;
+  margin: 2%;
+  display: inline-block;
+  transition: all 0.3s linear;
+  transform: scale(1);
+}
+.icons:hover {
+  transition: all 0.3s linear;
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+.followWrap {
+  text-align: center;
+}
+
+.followTopic {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }

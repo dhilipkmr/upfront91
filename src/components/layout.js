@@ -2,8 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Layout = props => {
-  const { title, children } = props
-  const [toggleNav, setToggleNav] = React.useState(false)
+  const { title, children, scrollToLocation } = props
+  const [toggleNav, setToggleNav] = React.useState(false);
+
   return (
     <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
       <header className="site-head">
@@ -26,17 +27,14 @@ const Layout = props => {
           </a>
           <nav id="swup" class="site-head-left">
             <ul className="nav" role="menu">
-              {/* <li className="nav-home nav-current" role="menuitem">
-                <Link to={`/`}>Home</Link>
-              </li> */}
-              <li className="nav-about" role="menuitem">
-                <Link to={`/`}>Our Theme</Link>
+              <li className="nav-item" role="menuitem" onClick={() => {scrollToLocation('theme')}}>
+                Our Theme
               </li>
-              <li className="nav-elements" role="menuitem">
-                <Link to={`/`}>Talks</Link>
+              <li className="nav-item" role="menuitem" onClick={() => {scrollToLocation('speakers')}}>
+                Talks
               </li>
-              <li className="nav-tags" role="menuitem">
-                <Link to={`/`}>Follow us</Link>
+              <li className="nav-item" role="menuitem" onClick={() => {scrollToLocation('contactus')}}>
+                Follow us
               </li>
             </ul>
           </nav>
@@ -63,14 +61,6 @@ const Layout = props => {
               >
                 Twitter
               </a>
-              <Link
-                to={`/rss.xml`}
-                title="RSS"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                RSS
-              </Link>
               <a
                 href="https://github.com/vaporwavy/gatsby-london-after-midnight"
                 title="GitHub"
