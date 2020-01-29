@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PostCard from "../components/postCard"
+
 import "../utils/normalize.css"
 import "../utils/css/screen.css"
 import "../utils/css/components/custom.css"
@@ -12,8 +12,7 @@ import Speakers from '../components/Speakers';
 import ContactUs from '../components/ContactUs';
 
 const BlogIndex = ({ data }, location) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title;
   let postCounter = 0;
   const $themeSection = useRef(null);
   const $speakerRef = React.createRef();
@@ -77,29 +76,6 @@ const indexQuery = graphql`
           name
           topic
           role
-        }
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM D, YYYY")
-            title
-            description
-            tags
-            thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
         }
       }
     }
