@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Upfront91Logo from '../../content/assets/upfrontVertical.png';
 
 const Layout = props => {
   const { title, children, scrollToLocation } = props
@@ -39,9 +40,10 @@ const Layout = props => {
             </ul>
           </nav>
           <div className="site-head-center">
-            <Link className="site-head-logo" to={`/`}>
+            {/* <Link className="site-head-logo" to={`/`}>
               {title}
-            </Link>
+            </Link> */}
+            <img src={Upfront91Logo} width="300px"/>
           </div>
           <div className="site-head-right">
             <div className="social-links">

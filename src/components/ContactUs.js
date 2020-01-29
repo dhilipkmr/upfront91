@@ -6,9 +6,21 @@ const ContactUs = ({ forwardedRef }) => {
   return (
     <div className="followWrap"ref={forwardedRef}>
       <div className="followTopic">Follow Us</div>
-      <span className="icons"><FaTwitter/></span>
-      <span className="icons" ><FaMeetup/></span>
-      <span className="icons"><FaInstagram/></span>
+      <span className="icons">
+        <a href="/" target="_blank">
+          <FaTwitter style={{ color: "#fff"}}/>
+        </a>
+      </span>
+      <span className="icons" >
+        <a href="/" target="_blank">
+          <FaMeetup style={{ color: "#fff"}}/>
+        </a>
+      </span>
+      <span className="icons">
+        <a href="/" target="_blank">
+          <FaInstagram style={{ color: "#fff"}}/>
+        </a>
+      </span>
     </div>
   );
 }
