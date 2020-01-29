@@ -3,7 +3,7 @@ import React, {useRef, forwardRef} from 'react';
 const Speakers = ({ list = [], forwardedRef = null }) => {
 
   return (
-    <div className="speakerWrap" ref={forwardedRef}>
+    <div className="mb20p" ref={forwardedRef}>
       <div className="speakerHeading">Speakers</div>
       {
         list.map((speaker) => {

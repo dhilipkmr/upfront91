@@ -3,7 +3,6 @@
   padding: 7%;
   border-radius: 30px;
   text-align: center;
-  margin: 10px;
   font-size: 20px;
   line-height: 2em;
 }
@@ -65,7 +64,7 @@
 .upperCase {
   text-transform: uppercase;
 }
-.speakerWrap {
+.view {
   max-width: 1000px;
   margin: 50px auto;
 }
@@ -143,4 +142,8 @@
   font-weight: bold;
   margin-top: 100px;
   margin-bottom: 50px;
+}
+
+.mb20p {
+  margin-bottom: 20%;
 }

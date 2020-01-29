@@ -7,7 +7,7 @@ const Layout = props => {
   const [toggleNav, setToggleNav] = React.useState(false);
 
   return (
-    <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
+    <div id="site-wrapper" className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
       <header className="site-head">
         <div className="site-head-container">
           <a

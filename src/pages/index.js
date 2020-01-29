@@ -23,13 +23,25 @@ const BlogIndex = ({ data }, location) => {
     window.open('/', "_blank");
   };
 
-  const scrollToLocation = (anchor) => {
+  const doScroll = (anchor) => {
     if (anchor === 'theme') {
       window.scrollTo(0, $themeSection.current.getBoundingClientRect().y - 20);
     } else if (anchor === 'speakers') {
       window.scrollTo(0,  $speakerRef.current.getBoundingClientRect().y - 20);
     } else if (anchor === 'contactus') {
       window.scrollTo(0, $contactUsSection.current.getBoundingClientRect().y - 20);
+    }
+  };
+
+  const scrollToLocation = (anchor) => {
+    const $wrap = document.querySelector('#site-wrapper');
+    if ($wrap.classList.contains('site-head-open')) {
+      $wrap.classList.remove('site-head-open');
+      setTimeout(() => {
+        doScroll(anchor);
+      }, 500);
+    } else {
+      doScroll(anchor);
     }
   };
 
@@ -43,9 +55,13 @@ const BlogIndex = ({ data }, location) => {
           </h2>
         </header>
       )}
-      <div ref={$themeSection} class="theme">{`"${data.site.siteMetadata.theme}"`}</div>
-      <Speakers list={data.site.siteMetadata.speakersList} ref={$speakerRef}/>
-      <ContactUs ref={$contactUsSection}/>
+      <div class="view">
+        <div ref={$themeSection} class="theme mb20p">
+          {`"${data.site.siteMetadata.theme}"`}
+        </div>
+        <Speakers list={data.site.siteMetadata.speakersList} ref={$speakerRef}/>
+        <ContactUs ref={$contactUsSection}/>
+      </div>
     </Layout>
   )
 }
