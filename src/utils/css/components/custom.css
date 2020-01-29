@@ -30,7 +30,8 @@
 }
 .flex {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .abs {
   position: absolute;
@@ -84,6 +85,12 @@
 @media (max-width: 600px) {
   .width100-tab {
     width: 100%;
+  }
+  .speaker {
+    max-height: none !important;
+  }
+  .speakerImg {
+    width: 100% !important;
   }
   .fixBtm-md {
     bottom: 0px;
