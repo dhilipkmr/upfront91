@@ -22,7 +22,7 @@
   transform: scale(1.04);
 }
 .speakerHeading {
-  font-size: 50px;
+  font-size: 275%;
   text-align: center;
   line-height: 3em;
   font-weight: bold;
@@ -85,11 +85,24 @@
   .width100-tab {
     width: 100%;
   }
+  .fixBtm-md {
+    bottom: 0px;
+    top: auto !important;
+    display: block;
+    width: 100%;
+    right: auto !important;
+    border-radius: 5px !important;
+    text-align: center;
+    padding: 12px !important;
+    box-shadow: 4px 2px 4px #777;
+    font-size: 18px;
+  }
 }
 
 .register {
-  position: sticky;
-  float: right;
+  position: fixed;
+  top: 80px;
+  right: 45px;
   background: white;
   border-radius: 14px;
   color: black;

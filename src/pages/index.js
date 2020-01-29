@@ -35,8 +35,7 @@ const BlogIndex = ({ data }, location) => {
 
   return (
     <Layout title={siteTitle} scrollToLocation={scrollToLocation}>
-      <SEO title="Posts" keywords={[`devlog`, `blog`, `gatsby`, `javascript`, `react`]}/>
-      <div class="register" onClick={registerUser}>Register</div>
+      <SEO title="upfront91" keywords={[`conference`, `frontend-meetup`, `frontend`, `meetup`, `goibibo-meetup`]}/>
       {data.site.siteMetadata.description && (
         <header className="page-head">
           <h2 className="page-head-title">
